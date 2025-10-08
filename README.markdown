@@ -1,6 +1,8 @@
+[![Project Banner](image.png)](https://srikanthsk1-clustering-and-segmentation-app-yjtslr.streamlit.app/)
+
 # ✈️ Air Traffic Passenger Clustering Project
 
-![image.png](https://srikanthsk1-clustering-and-segmentation-app-yjtslr.streamlit.app/)
+
 
 ## 📖 Overview
 
