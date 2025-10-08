@@ -1,12 +1,13 @@
 # ✈️ Air Traffic Passenger Clustering Project
 
-![Project Banner](https://via.placeholder.com/1200x300.png?text=Air+Traffic+Clustering+Analysis)
+![Project Banner](https://srikanthsk1-clustering-and-segmentation-app-yjtslr.streamlit.app/)
 
 ## 📖 Overview
 
 This project implements a **data-driven clustering solution** for air traffic passenger statistics, following the **CRISP-ML(Q)** methodology. The goal is to optimize airline and terminal operations, enhance passenger satisfaction, and maximize profitability through actionable segmentation insights. The solution includes a backend clustering pipeline and an interactive **Streamlit** web application for user-friendly analysis and visualization.
 
 ### 🎯 Business Objectives
+
 - **Business Success**: Achieve 10-12% improvement in operational efficiency through targeted resource allocation.
 - **ML Success**: Attain a Silhouette Score ≥ 0.7 for high-quality clustering.
 - **Economic Success**: Drive an 8% revenue increase via optimized operations and targeted strategies.
@@ -30,22 +31,27 @@ air_traffic_clustering/
 ## 🛠️ Setup Instructions
 
 ### Prerequisites
+
 - **Python**: Version 3.9+
 - **Dependencies**: Listed in `requirements.txt`
 
 ### Installation
+
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/your-repo/air_traffic_clustering.git
    cd air_traffic_clustering
    ```
 
 2. **Install Dependencies**:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Run the Streamlit App**:
+
    ```bash
    streamlit run app.py
    ```
@@ -56,6 +62,7 @@ air_traffic_clustering/
 ## 📋 Dependencies
 
 The project relies on the following Python libraries (see `requirements.txt` for versions):
+
 - `pandas` - Data manipulation
 - `numpy` - Numerical operations
 - `matplotlib` & `seaborn` - Static visualizations
@@ -68,6 +75,7 @@ The project relies on the following Python libraries (see `requirements.txt` for
 ## 📊 Data Requirements
 
 The input dataset (`AirTraffic_Passenger_Statistics.csv`) should include:
+
 - **Operating Airline**: Name of the airline
 - **Operating Airline IATA Code**: Airline IATA code
 - **GEO Region**: Geographic region
@@ -78,8 +86,9 @@ The input dataset (`AirTraffic_Passenger_Statistics.csv`) should include:
 - **Month**: Month of record
 
 ### Sample Data Preview
+
 | Operating Airline | GEO Region | Passenger Count | Year | Month |
-|-------------------|------------|-----------------|------|-------|
+| ----------------- | ---------- | --------------- | ---- | ----- |
 | United Airlines   | US         | 15,000          | 2024 | 1     |
 | Delta Airlines    | US         | 12,000          | 2024 | 2     |
 | American Airlines | Europe     | 18,000          | 2024 | 3     |
@@ -88,29 +97,34 @@ The input dataset (`AirTraffic_Passenger_Statistics.csv`) should include:
 
 The project follows the **CRISP-ML(Q)** framework for a structured ML workflow:
 
-1. **Business & Data Understanding**  
-   - Load and explore data to understand airline operations and identify key variables.  
+1. **Business & Data Understanding**
+
+   - Load and explore data to understand airline operations and identify key variables.
    - Key metrics: Total airlines, geographic regions, passenger counts.
 
-2. **Data Preparation**  
-   - Clean data: Remove duplicates, handle missing values, and cap outliers (winsorization).  
-   - Preprocess: Scale numeric features (MinMaxScaler) and encode categorical features (OneHotEncoder).  
+2. **Data Preparation**
+
+   - Clean data: Remove duplicates, handle missing values, and cap outliers (winsorization).
+   - Preprocess: Scale numeric features (MinMaxScaler) and encode categorical features (OneHotEncoder).
    - Dimensionality reduction: Apply PCA to retain 95% variance.
 
-3. **Model Building**  
-   - Use hierarchical clustering (AgglomerativeClustering) with multiple linkage methods (`ward`, `complete`, `average`).  
+3. **Model Building**
+
+   - Use hierarchical clustering (AgglomerativeClustering) with multiple linkage methods (`ward`, `complete`, `average`).
    - Test 2 to 10 clusters to find the optimal configuration based on Silhouette Score.
 
-4. **Model Evaluation**  
-   - Metrics: Silhouette Score, cluster size distribution, within-cluster variance, and business insights (e.g., passenger counts per cluster).  
+4. **Model Evaluation**
+
+   - Metrics: Silhouette Score, cluster size distribution, within-cluster variance, and business insights (e.g., passenger counts per cluster).
    - Visualizations: Silhouette comparison, cluster distribution, dendrogram.
 
-5. **Deployment**  
-   - Deploy via Streamlit for interactive data upload, parameter tuning, and result visualization.  
+5. **Deployment**
+
+   - Deploy via Streamlit for interactive data upload, parameter tuning, and result visualization.
    - Features: File upload, interactive clustering parameters, downloadable results, and executive report.
 
-6. **Monitoring & Maintenance**  
-   - Track Silhouette Score and cluster balance over time.  
+6. **Monitoring & Maintenance**
+   - Track Silhouette Score and cluster balance over time.
    - Retrain model with new data or if performance degrades.
 
 ## 🚀 Using the Streamlit App
@@ -131,14 +145,16 @@ The project follows the **CRISP-ML(Q)** framework for a structured ML workflow:
 ## 📈 Expected Results
 
 ### Clustering Quality
-| Scenario          | Silhouette Score | Status                  |
-|-------------------|------------------|-------------------------|
-| Poor Clustering   | 0.1 - 0.3       | ❌ Needs improvement    |
-| Fair Clustering   | 0.3 - 0.5       | ⚠️ Acceptable           |
-| Good Clustering   | 0.5 - 0.7       | ✅ Good                |
-| Excellent Clustering | 0.7 - 1.0     | ✅ Excellent           |
+
+| Scenario             | Silhouette Score | Status               |
+| -------------------- | ---------------- | -------------------- |
+| Poor Clustering      | 0.1 - 0.3        | ❌ Needs improvement |
+| Fair Clustering      | 0.3 - 0.5        | ⚠️ Acceptable        |
+| Good Clustering      | 0.5 - 0.7        | ✅ Good              |
+| Excellent Clustering | 0.7 - 1.0        | ✅ Excellent         |
 
 ### Business Impact
+
 - **Operational Efficiency (10-12%)**:
   - High-volume clusters: Allocate more staff and larger aircraft.
   - Medium clusters: Optimize standard operations.
@@ -151,6 +167,7 @@ The project follows the **CRISP-ML(Q)** framework for a structured ML workflow:
 ## 📸 Visualizations
 
 The pipeline generates the following visualizations:
+
 1. **Silhouette Comparison**: Compares clustering performance across configurations.
    ![Silhouette Comparison](silhouette_comparison.png)
 2. **Cluster Distribution**: Shows record and passenger distribution across clusters.
@@ -160,11 +177,11 @@ The pipeline generates the following visualizations:
 
 ## 🛡️ Common Issues & Solutions
 
-| Issue                           | Solution                                                                 |
-|---------------------------------|--------------------------------------------------------------------------|
-| Low Silhouette Score (< 0.3)    | Enable PCA, try different linkage methods (`ward`, `complete`, `average`). |
-| Imbalanced Clusters             | Adjust number of clusters (try 4-5), use `ward` linkage.                  |
-| Too Many Features               | Apply feature selection or increase PCA variance threshold (e.g., 0.90).   |
+| Issue                        | Solution                                                                   |
+| ---------------------------- | -------------------------------------------------------------------------- |
+| Low Silhouette Score (< 0.3) | Enable PCA, try different linkage methods (`ward`, `complete`, `average`). |
+| Imbalanced Clusters          | Adjust number of clusters (try 4-5), use `ward` linkage.                   |
+| Too Many Features            | Apply feature selection or increase PCA variance threshold (e.g., 0.90).   |
 
 ## 📦 Deployment Options
 
@@ -188,6 +205,7 @@ The pipeline generates the following visualizations:
 ## 🎓 Key Takeaways
 
 ### Technical Skills
+
 - End-to-end ML pipeline using CRISP-ML(Q).
 - Hierarchical clustering with scikit-learn.
 - Data preprocessing (scaling, encoding, PCA).
@@ -195,25 +213,29 @@ The pipeline generates the following visualizations:
 - Comprehensive model evaluation (Silhouette Score, visualizations).
 
 ### Business Skills
+
 - Translating business problems to ML solutions.
 - Defining and measuring success criteria (ML, business, economic).
 - Generating actionable insights from clustering results.
 - Communicating findings to stakeholders via reports and visualizations.
 
 ## 🔗 Resources
+
 - [Streamlit Documentation](https://docs.streamlit.io)
 - [Scikit-learn Clustering](https://scikit-learn.org/stable/modules/clustering.html)
 - [CRISP-ML(Q)](https://ml-ops.org/content/crisp-ml)
 
 ## 📝 Notes
+
 - Ensure data quality for optimal clustering results.
 - Test multiple clustering configurations to find the best setup.
 - Validate business insights with domain experts.
 - Regularly monitor and retrain the model to maintain performance.
 
 ## 🎉 Acknowledgments
+
 Developed as a production-ready solution for airline operation optimization, combining robust ML techniques with an intuitive user interface.
 
 ---
 
-*Happy Clustering!* ✈️
+_Happy Clustering!_ ✈️
